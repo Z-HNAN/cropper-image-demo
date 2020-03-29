@@ -1,6 +1,6 @@
 {
-  "name": "hdu-image-cropper",
-  "version": "1.0.0",
+  "name": "image-cropper",
+  "version": "1.0.1",
   "description": "image cropper",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/dev.config.js",
