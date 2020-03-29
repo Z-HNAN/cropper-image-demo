@@ -4,10 +4,11 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .title {
-  /* flex: 0 0 35px; */
+  flex: 0 0 40px;
   text-align: center;
 }
 
@@ -28,7 +29,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAXCAYAAAARIY8tAAAACXBIWXMAABX+AAAV/gFgyXAMAAAAbElEQVRIie2WQQoFMQhDE9ve/7ylNJnFXCAwq/8x6+gTxCDvva4qJJKEvTdsR/4xBrLOH9SABjQAmLYhKTJLQlXFl0wS85wTF1QV1logGQ80bccA2yAZA4B/WHIDGvADgJl+FMCbLWluAe/lP3HPMRHFhneeAAAAAElFTkSuQmCC');
   border-bottom: 1px solid grey;
 }
@@ -38,8 +38,8 @@
 
 .toolbar {
   display: flex;
-  /* flex: 0 0 20px; */
-  padding: 10px 0;
+  align-items: center;
+  flex: 0 0 50px;
 }
 
 .toolbarUpload {
