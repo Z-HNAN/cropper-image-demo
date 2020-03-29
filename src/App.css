@@ -1,0 +1,61 @@
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  /* flex: 0 0 35px; */
+  text-align: center;
+}
+
+.settingButton {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+
+.tipsButton {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+}
+
+.imgContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAXCAYAAAARIY8tAAAACXBIWXMAABX+AAAV/gFgyXAMAAAAbElEQVRIie2WQQoFMQhDE9ve/7ylNJnFXCAwq/8x6+gTxCDvva4qJJKEvTdsR/4xBrLOH9SABjQAmLYhKTJLQlXFl0wS85wTF1QV1logGQ80bccA2yAZA4B/WHIDGvADgJl+FMCbLWluAe/lP3HPMRHFhneeAAAAAElFTkSuQmCC');
+  border-bottom: 1px solid grey;
+}
+
+.imgContent {
+}
+
+.toolbar {
+  display: flex;
+  /* flex: 0 0 20px; */
+  padding: 10px 0;
+}
+
+.toolbarUpload {
+  flex: 1;
+  text-align: center;
+}
+.toolbarDownload {
+  flex: 1;
+  text-align: center;
+}
+
+.save {
+  display: none;
+  z-index: -1;
+}
+
+.saveCanvas {
+  position: absolute;
+}
