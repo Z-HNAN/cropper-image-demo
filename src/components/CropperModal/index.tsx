@@ -8,7 +8,7 @@ import 'cropperjs/dist/cropper.css' // 引入Cropper对应的css
 interface PropTypes {
   visible: boolean
   zoom: number
-  uploadedImageFile: Blob,
+  uploadedImageFile: Blob | null,
   onClose: () => void,
   onSubmit: (file: Blob) => void,
 }
@@ -27,8 +27,22 @@ const CropperModal: React.FC<PropTypes> = props => {
   const cropperRef = useRef(null)
 
   useEffect(() => {
+    // 不存在上传对象直接结束
+    if (!uploadedImageFile) {
+      return
+    }
     const fileReader = new FileReader()
-    fileReader.onload = e => {
+    // 此时loading一定是存在的
+    let hideLoading = () => {}
+
+    fileReader.onloadstart = () => {
+      // 产生loading
+      hideLoading = message.loading('解析图片中...', 0)
+    }
+
+    fileReader.onloadend = (e) => {
+      // 结束loading
+      hideLoading()
       if (!(e.target)) {
         message.error(`图片上传失败: ${e}`)
         return
@@ -38,6 +52,10 @@ const CropperModal: React.FC<PropTypes> = props => {
     }
 
     fileReader.readAsDataURL(uploadedImageFile)
+
+    // 结束时销毁对象
+    // eslint-disable-next-line consistent-return
+    return hideLoading
   }, [uploadedImageFile])
  
   const handleSubmit = useCallback(() => {

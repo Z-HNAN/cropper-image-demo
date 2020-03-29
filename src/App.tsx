@@ -215,7 +215,7 @@ const App: React.FC<PropsTypes> = () => {
       {cropperVisible && <CropperModal
         visible={cropperVisible}
         zoom={cropperSize.width / cropperSize.height} // widht / height
-        uploadedImageFile={file as Blob}
+        uploadedImageFile={file}
         onClose={() => { setCropperVisible(false) }}
         onSubmit={handleSubmit}
       />}
